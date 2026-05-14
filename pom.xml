@@ -80,7 +80,10 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
-				</configuration>
+				 <compilerArguments>
+                <arg>-parameters</arg>
+            </compilerArguments>
+				</configuration>               
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

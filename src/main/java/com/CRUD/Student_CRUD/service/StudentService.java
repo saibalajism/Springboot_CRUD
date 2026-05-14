@@ -1,5 +1,7 @@
 package com.CRUD.Student_CRUD.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,12 @@ public class StudentService {
 		 
 		 return studentRepository.save(student);
 		 
-	}	
+	}
+	public List<Student> fetchStudent(){
+		return studentRepository.findAll();
+	}
+	public Student fetchStudentbyId(int StudentID) {
+		return studentRepository.findById(StudentID).get();		
+	}
 
 }
