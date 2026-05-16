@@ -54,8 +54,16 @@ public class StudentService {
 		    successResponse.put("httpStatusCode", 200);
 		    successResponse.set("data",mapper.valueToTree(studentRepository.save(a)));
 		    return new ResponseEntity<>(successResponse, HttpStatus.OK);
+		}		
+	}
+	public  boolean deleteStudent(int StudentId) {
+		Student a=studentRepository.findById(StudentId).orElse(null);
+		if(a==null) {
+			return false;
+		}else {
+		    studentRepository.deleteById(StudentId);
+		    return true;
 		}
-		
 	}
 
 }
